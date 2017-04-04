@@ -1,0 +1,86 @@
+background no
+update_interval 1
+total_run_times 0
+net_avg_samples 2
+override_utf8_locale yes
+double_buffer yes
+no_buffers no
+text_buffer_size 2048
+imlib_cache_size 0
+temperature_unit celsius
+out_to_console no
+out_to_stderr no
+
+##-- Window specifications --##
+
+own_window yes
+own_window_type normal
+own_window_transparent yes
+#own_window_argb_value 255
+own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+border_inner_margin 0
+border_outer_margin 0
+minimum_size 320 0
+maximum_width 320
+alignment top_right
+gap_x 5
+gap_y 20
+
+##-- Graphics settings --##
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+##-- Text settings --##
+
+use_xft yes
+xftfont Bahamas Light:Bold:size:9
+xftalpha 0.5
+default_color white
+default_gauge_size 47 25
+uppercase no
+use_spacer right
+color0 white
+color1 dedede
+color2 949494 #c8c8c8
+color3 5e5e5e #6f6f6f #797979
+
+##-- Lua Load --##
+# Loading lua script for drawning rings
+
+lua_load $HOME/.mnemonic/scripts/rings.lua
+lua_draw_hook_post main
+
+own_window_colour 000000
+TEXT
+${font Feena Casual:size=70}${alignc}${voffset 10}${color3}${time %H'%M}${font Bahamas Light:size=22}
+${alignc}${voffset -5}${time %d %B %Y}${font Bahamas Light:size=22}
+${alignc}${voffset -2}${time %A}${font Bahamas Light:size=22}
+${voffset -4}${alignc}Machine: $nodename${font Bahamas Light:Bold:size=9}
+${voffset 25}${offset 190}${font Bahamas Light:size=8}${color2}TEMPERATURA:${alignr}${acpitemp}°C
+${offset 190}${top name 1}${alignr}${top cpu 1}%
+${offset 190}${top name 2}${alignr}${top cpu 2}%
+${offset 190}${top name 3}${alignr}${top cpu 3}%
+${offset 190}${top name 4}${alignr}${top cpu 4}%
+${offset 190}${top name 5}${alignr}${top cpu 5}%
+${font Bahamas Light:size=9}
+${offset 40}${voffset 90}UPLD:  ${upspeed wlp11s0}/ ${totalup wlp11s0} 
+${offset 40}${voffset 2}DWN:  ${downspeed wlp11s0}/ ${totaldown wlp11s0} 
+${voffset -7}${offset 40}------------------------------------ ${voffset -3}
+${offset 73}${font Bahamas Light:size=9}${execpi 60 cat $HOME/.vnstat | sed -e '2d'} 
+${offset 60}${execpi 60 cat $HOME/.vnstat | sed -e '1d'} 
+${voffset 19}${goto 105}${font Bahamas Light:size=9}$color2$mpd_title
+${goto 105}$mpd_artist
+${goto 105}$mpd_album
+${goto 105}${mpd_bar 3,200}
+${execi 1 ~/.mnemonic/scripts/cover.sh}${image /tmp/conkyCover.png -p 0,450}${voffset 5}${font Bahamas Light:size=9}
+${offset 90}${color2}Post box  ------------------------------------${voffset 5}
+Gmail: ${execpi 1800 python3 ~/.mnemonic/scripts/gmail_script1.py}
+${voffset 5}
+Manjaro News  -----------------------------------------${voffset 5}
+${rss http://manjaro.org/feed/ 60 item_titles 3}${voffset 5}
+Remember this  ------------------------------------------------${voffset 5}${font Bahamas Light:size=11}
+${execpi 15 cat /home/maly/todo}
