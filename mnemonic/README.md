@@ -15,3 +15,4 @@
 6. Rename mnemonic dir to .mnemonic dir
 
 # Have fun!
+![Alt text](/conky/mnemonic/conky-mnemonic.png?raw=true "Conky mnemonic")
