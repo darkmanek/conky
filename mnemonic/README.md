@@ -10,7 +10,7 @@
 3. Run in terminal:
 + <code>crontab -e
 + */10 * * * * sh $HOME/.mnemonic/scripts/vnstat.sh > $HOME/.vnstat</code>
-4. Correct scripts towork for You
+4. Correct scripts to work for Your machine
 
 # Have fun!
 
