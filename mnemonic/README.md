@@ -1,16 +1,17 @@
 # Conky mnemonic
-1. For use install vnstat and run:
+1. Unpack or import mnemonic to home dir
+2. For use install vnstat and run:
 
 + <code>/etc/init.d/vnstat restart</code>
 + in debian-based or
 + <code> systemctl enable vnstat.service && systemctl start vnstat.service</code>
 + in arch-based distro
-2. next run:
+3. next run:
 + <code>vnstat -u -i [interface]</code>
-3. Run in terminal:
+4. Run in terminal:
 + <code>crontab -e
 + */10 * * * * sh $HOME/.mnemonic/scripts/vnstat.sh > $HOME/.vnstat</code>
-4. Correct scripts to work for Your machine
-5. Place folder in home dir, rename mnemonic dir to .mnemonic dir
+5. Correct scripts to work for Your machine
+6. Rename mnemonic dir to .mnemonic dir
 
 # Have fun!
