@@ -11,6 +11,6 @@
 + <code>crontab -e
 + */10 * * * * sh $HOME/.mnemonic/scripts/vnstat.sh > $HOME/.vnstat</code>
 4. Correct scripts to work for Your machine
+5. Place folder in home dir, rename mnemonic dir to .mnemonic dir
 
 # Have fun!
-
