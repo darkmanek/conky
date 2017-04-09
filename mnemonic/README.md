@@ -9,8 +9,9 @@
 3. next run:
 + <code>vnstat -u -i [interface]</code>
 4. Run in terminal:
-+ <code>crontab -e
-+ */10 * * * * sh $HOME/.mnemonic/scripts/vnstat.sh > $HOME/.vnstat</code>
++ <code>crontab -e</code>
++ and paste:
++ <code>*/10 * * * * sh $HOME/.mnemonic/scripts/vnstat.sh > $HOME/.vnstat</code>
 5. Correct scripts to work for Your machine
 6. Rename mnemonic dir to .mnemonic dir
 
